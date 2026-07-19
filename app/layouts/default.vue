@@ -1,12 +1,18 @@
 <template>
-  <div>
-    <main-navigation />
-    <slot />
+  <div class="flex flex-col h-screen">
+    <!-- <main-navigation /> -->
+    <!-- Header -->
+    <SharedHeader />
+
+    <main class="container mx-auto flex-1 mt-2">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <SharedFooter />
   </div>
 </template>
 
-<script lang="ts" setup>
-import MainNavigation from "~/components/MainNavigation.vue";
-</script>
+<script lang="ts" setup></script>
 
 <style></style>
