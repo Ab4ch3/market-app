@@ -1,3 +1,22 @@
+<template>
+  <div>
+    <UPageGrid>
+      <UPageCard v-for="(card, index) in cards" :key="index" v-bind="card">
+        <UColorModeImage
+          v-if="card.image"
+          :light="`${card.image.path}-light.svg`"
+          :dark="`${card.image.path}-dark.svg`"
+          :width="card.image.width"
+          :height="card.image.height"
+          :alt="card.title"
+          loading="lazy"
+          class="w-full"
+        />
+      </UPageCard>
+    </UPageGrid>
+  </div>
+</template>
+
 <script setup lang="ts">
 const cards = ref([
   {
@@ -43,20 +62,3 @@ const cards = ref([
   },
 ]);
 </script>
-
-<template>
-  <UPageGrid>
-    <UPageCard v-for="(card, index) in cards" :key="index" v-bind="card">
-      <UColorModeImage
-        v-if="card.image"
-        :light="`${card.image.path}-light.svg`"
-        :dark="`${card.image.path}-dark.svg`"
-        :width="card.image.width"
-        :height="card.image.height"
-        :alt="card.title"
-        loading="lazy"
-        class="w-full"
-      />
-    </UPageCard>
-  </UPageGrid>
-</template>

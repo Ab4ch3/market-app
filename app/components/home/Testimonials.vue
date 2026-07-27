@@ -1,3 +1,39 @@
+<template>
+  <div>
+    <UPageSection
+      title="Testimonials"
+      description="Our Testimonial from ours satisfied clients"
+      headline="Testimonials"
+    />
+
+    <UPageColumns>
+      <UPageCard
+        variant="solid"
+        to="https://cloudflare.com"
+        icon="i-logos-cloudflare-icon"
+        title="Cloudflare's Workers LaunchPad"
+        description="NuxtHub is part of the Cloudflare's Workers Launchpad Cohort to make sure you get a first-class experience on top of Cloudflare's network."
+        :ui="{ leadingIcon: 'size-10' }"
+      />
+
+      <UPageCard
+        v-for="(testimonial, index) in testimonials"
+        :key="index"
+        variant="subtle"
+        :description="testimonial.quote"
+        :ui="{
+          description:
+            'before:content-[open-quote] after:content-[close-quote]',
+        }"
+      >
+        <template #footer>
+          <UUser v-bind="testimonial.user" size="xl" />
+        </template>
+      </UPageCard>
+    </UPageColumns>
+  </div>
+</template>
+
 <script setup lang="ts">
 const testimonials = ref([
   {
@@ -144,30 +180,3 @@ const testimonials = ref([
   },
 ]);
 </script>
-
-<template>
-  <UPageColumns>
-    <UPageCard
-      variant="solid"
-      to="https://cloudflare.com"
-      icon="i-logos-cloudflare-icon"
-      title="Cloudflare's Workers LaunchPad"
-      description="NuxtHub is part of the Cloudflare's Workers Launchpad Cohort to make sure you get a first-class experience on top of Cloudflare's network."
-      :ui="{ leadingIcon: 'size-10' }"
-    />
-
-    <UPageCard
-      v-for="(testimonial, index) in testimonials"
-      :key="index"
-      variant="subtle"
-      :description="testimonial.quote"
-      :ui="{
-        description: 'before:content-[open-quote] after:content-[close-quote]',
-      }"
-    >
-      <template #footer>
-        <UUser v-bind="testimonial.user" size="xl" />
-      </template>
-    </UPageCard>
-  </UPageColumns>
-</template>
