@@ -2,34 +2,34 @@
   <u-app>
     <div class="error-container">
       <div class="error-content">
-        <!-- Animación del número 404 -->
+        <!-- 404 number animation -->
         <div class="error-code-wrapper">
           <h1 class="error-code">{{ error.statusCode || 404 }}</h1>
           <div class="error-glow"></div>
         </div>
 
-        <!-- Mensaje de error -->
+        <!-- Error message -->
         <div class="error-message">
           <!-- <h2>{{ error }}</h2> -->
           <h2>{{ error.message }}</h2>
           <p>{{ $props.error.data?.myOtherField }}</p>
         </div>
 
-        <!-- Botones de acción -->
+        <!-- Action buttons -->
         <div class="error-actions">
           <button color="success" size="lg" @click="handleError">
-            Volver al inicio
+            Go back home
           </button>
 
           <button color="primary" size="lg" variant="ghost" @click="goBack">
-            Ir atrás
+            Go back
           </button>
         </div>
 
-        <!-- Información adicional para desarrolladores en modo dev -->
+        <!-- Additional information for developers in dev mode -->
         <div v-if="isDev && error" class="error-details">
           <div class="error-stack">
-            <p><strong>Mensaje:</strong> {{ error.message }}</p>
+            <p><strong>Message:</strong> {{ error.message }}</p>
             <p><strong>Status:</strong> {{ error.statusCode }}</p>
             <p v-if="error.url"><strong>URL:</strong> {{ error.url }}</p>
             <pre v-if="error.stack">{{ error.stack }}</pre>

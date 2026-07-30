@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 useSeoMeta({
-  // Especial para SEO
+  // Special for SEO
 
   title: "About | Market-App",
   description: " About this market app",
