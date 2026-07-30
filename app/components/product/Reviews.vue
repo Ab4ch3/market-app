@@ -159,7 +159,7 @@ const testimonials = ref([
         icon="i-lucide-plus-circle"
         size="md"
         class="ml-4"
-        label="Añadir reseña"
+        label="Add review"
       /> -->
       <ModalReview button-label="Add review" />
     </div>
